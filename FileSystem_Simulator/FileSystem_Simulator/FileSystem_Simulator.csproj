@@ -48,7 +48,7 @@
   <ItemGroup>
     <Compile Include="Controllador\SistemaArchivos.cs" />
     <Compile Include="Modelo\Archivo.cs" />
-    <Compile Include="Modelo\Comando.cs" />
+    <Compile Include="Modelo\Command.cs" />
     <Compile Include="Modelo\Directorio.cs" />
     <Compile Include="Modelo\Grupo.cs" />
     <Compile Include="Modelo\Permiso.cs" />
