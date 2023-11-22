@@ -29,31 +29,35 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.rtbTerminal = new System.Windows.Forms.RichTextBox();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(42)))), ((int)(((byte)(54)))));
-            this.panel1.Controls.Add(this.richTextBox1);
+            this.panel1.Controls.Add(this.rtbTerminal);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1233, 578);
             this.panel1.TabIndex = 0;
             // 
-            // richTextBox1
+            // rtbTerminal
             // 
-            this.richTextBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(42)))), ((int)(((byte)(54)))));
-            this.richTextBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.richTextBox1.Font = new System.Drawing.Font("Courier New", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.richTextBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(248)))), ((int)(((byte)(242)))));
-            this.richTextBox1.Location = new System.Drawing.Point(0, 0);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(1233, 578);
-            this.richTextBox1.TabIndex = 0;
-            this.richTextBox1.Text = "";
+            this.rtbTerminal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(42)))), ((int)(((byte)(54)))));
+            this.rtbTerminal.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.rtbTerminal.Font = new System.Drawing.Font("Courier New", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rtbTerminal.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(248)))), ((int)(((byte)(242)))));
+            this.rtbTerminal.Location = new System.Drawing.Point(0, 0);
+            this.rtbTerminal.Name = "rtbTerminal";
+            this.rtbTerminal.Size = new System.Drawing.Size(1233, 578);
+            this.rtbTerminal.TabIndex = 0;
+            this.rtbTerminal.Text = "";
+            this.rtbTerminal.SelectionChanged += new System.EventHandler(this.rtbTerminal_SelectionChanged);
+            this.rtbTerminal.KeyDown += new System.Windows.Forms.KeyEventHandler(this.rtbTerminal_KeyDown);
+            this.rtbTerminal.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.rtbTerminal_KeyPress);
+            this.rtbTerminal.KeyUp += new System.Windows.Forms.KeyEventHandler(this.rtbTerminal_KeyUp);
             // 
             // Terminal
             // 
@@ -71,7 +75,7 @@
         #endregion
 
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.RichTextBox richTextBox1;
+        private System.Windows.Forms.RichTextBox rtbTerminal;
     }
 }
 
