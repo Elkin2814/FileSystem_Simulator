@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace FileSystem_Simulator
 {
-    public partial class Form1 : Form
+    public partial class Terminal : Form
     {
-        public Form1()
+        public Terminal()
         {
             InitializeComponent();
         }

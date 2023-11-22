@@ -1,0 +1,11 @@
+C:\Users\Elkin\OneDrive\Documentos\Proyectos\FileSystem_Simulator\FileSystem_Simulator\FileSystem_Simulator\bin\Debug\FileSystem_Simulator.exe.config
+C:\Users\Elkin\OneDrive\Documentos\Proyectos\FileSystem_Simulator\FileSystem_Simulator\FileSystem_Simulator\bin\Debug\FileSystem_Simulator.exe
+C:\Users\Elkin\OneDrive\Documentos\Proyectos\FileSystem_Simulator\FileSystem_Simulator\FileSystem_Simulator\bin\Debug\FileSystem_Simulator.pdb
+C:\Users\Elkin\OneDrive\Documentos\Proyectos\FileSystem_Simulator\FileSystem_Simulator\FileSystem_Simulator\obj\Debug\FileSystem_Simulator.csproj.AssemblyReference.cache
+C:\Users\Elkin\OneDrive\Documentos\Proyectos\FileSystem_Simulator\FileSystem_Simulator\FileSystem_Simulator\obj\Debug\FileSystem_Simulator.csproj.SuggestedBindingRedirects.cache
+C:\Users\Elkin\OneDrive\Documentos\Proyectos\FileSystem_Simulator\FileSystem_Simulator\FileSystem_Simulator\obj\Debug\FileSystem_Simulator.Terminal.resources
+C:\Users\Elkin\OneDrive\Documentos\Proyectos\FileSystem_Simulator\FileSystem_Simulator\FileSystem_Simulator\obj\Debug\FileSystem_Simulator.Properties.Resources.resources
+C:\Users\Elkin\OneDrive\Documentos\Proyectos\FileSystem_Simulator\FileSystem_Simulator\FileSystem_Simulator\obj\Debug\FileSystem_Simulator.csproj.GenerateResource.cache
+C:\Users\Elkin\OneDrive\Documentos\Proyectos\FileSystem_Simulator\FileSystem_Simulator\FileSystem_Simulator\obj\Debug\FileSystem_Simulator.csproj.CoreCompileInputs.cache
+C:\Users\Elkin\OneDrive\Documentos\Proyectos\FileSystem_Simulator\FileSystem_Simulator\FileSystem_Simulator\obj\Debug\FileSystem_Simulator.exe
+C:\Users\Elkin\OneDrive\Documentos\Proyectos\FileSystem_Simulator\FileSystem_Simulator\FileSystem_Simulator\obj\Debug\FileSystem_Simulator.pdb
