@@ -75,15 +75,25 @@ namespace FileSystem_Simulator.Modelo
 
         }
 
-        private string executeEcho(string[] parts) 
+        private string executeEcho(string[] parts)
         {
+            if (parts[1].StartsWith("\"") && parts[parts.Length - 1].EndsWith("\""))
+            {
+                if (parts.Length >= 2)
+                {
+                    parts[1] = parts[1].Substring(1);
+                    parts[parts.Length - 1] = parts[parts.Length - 1].Substring(0, parts[parts.Length - 1].Length - 1);
+                }
+            }
+            else return "command body is invalid";
+
             string[] arrAux = new string[parts.Length - 1];
-            
             Array.Copy(parts, 1, arrAux, 0, arrAux.Length);
 
-            Debug.WriteLine(string.Join(" ", arrAux));
+            string result = string.Join(" ", arrAux);
+            Debug.WriteLine(result);
 
-            return string.Join(" ", arrAux);
+            return result;
         }
 
         private void executeCls() 
