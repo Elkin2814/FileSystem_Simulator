@@ -18,23 +18,70 @@ namespace FileSystem_Simulator.Modelo
 
             switch (mainPart)
             {
-                case "hola":
-                    executeHola(parts);
-                    break;
-                case "adios":
+                case "print":
+                    executePrint(parts);
 
                     break;
+
+                case "mkdir":
+                    //crear directorio
+                    break;
+
+                case "pwd":
+                    //mostrar directorio actual
+                    break;
+
+                case "ls":
+                    //mostrar contenido del directorio
+                    break;
+
+                case "cd":
+                    //dirigirse a un directorio o a raíz
+                    break;
+
+                case "cat":
+                    //crear o visualizar el contenido de un txt (necesita extensión .txt)
+                    break;
+
+                case "mv":
+                    //renombrar archivo o directorio
+                    break;
+
+                case "rm":
+                    //eliminar archivo o directorio
+                    break;
+
+                case "chmod":
+                    // permisos
+                    break;
+
+                case "format":
+                    //formatear todo
+                    break;
+
+                case "cls":
+                    //borrar pantalla
+                    break;
+
+                case "history":
+                    //registrar un historial
+                    break;
+
                 default:
-
+                    executeDefaultCase();
                     break;
             }
 
         }
 
-        private void executeHola(string[] parts) 
+        private string executeDefaultCase() 
         {
-            MessageBox.Show(string.Join(" ", parts), "Imprimiendo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            //return string.Join(" ", parts);
+            return "command not found";
+        }
+
+        private string executePrint(string[] parts) 
+        {
+            return string.Join(" ", parts);
         }
 
     }
