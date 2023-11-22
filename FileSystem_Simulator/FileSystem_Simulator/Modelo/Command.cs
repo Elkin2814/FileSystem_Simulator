@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Drawing.Text;
 using System.Linq;
 using System.Text;
@@ -10,78 +11,91 @@ namespace FileSystem_Simulator.Modelo
 {
     internal class Command
     {
-        public void executeCommand(string command)
+        private List<string> historyList = new List<string>();
+
+        public string executeCommand(string command)
         {
-            string[] parts = command.Split(' ');
+            string[] commandParts = command.Split(' ');
+            string mainCommand = commandParts[0].ToLower();
 
-            string mainPart = parts[0].ToLower();
+            historyList.Add(command);
 
-            switch (mainPart)
+            switch (mainCommand)
             {
-                case "print":
-                    executePrint(parts);
-
-                    break;
+                case "echo":
+                    return executeEcho(commandParts);
 
                 case "mkdir":
                     //crear directorio
-                    break;
+                    return "";
 
                 case "pwd":
                     //mostrar directorio actual
-                    break;
-
+                    return "";
+                    ;
                 case "ls":
                     //mostrar contenido del directorio
-                    break;
+                    return "";
 
                 case "cd":
                     //dirigirse a un directorio o a raíz
-                    break;
+                    return "";
 
                 case "cat":
                     //crear o visualizar el contenido de un txt (necesita extensión .txt)
-                    break;
+                    return "";
 
                 case "mv":
                     //renombrar archivo o directorio
-                    break;
+                    return "";
 
                 case "rm":
                     //eliminar archivo o directorio
-                    break;
+                    return "";
 
                 case "chmod":
                     // permisos
-                    break;
+                    return "";
 
                 case "format":
                     //formatear todo
-                    break;
+                    return "";
 
                 case "cls":
                     //borrar pantalla
-                    break;
+
+                    return "";
 
                 case "history":
-                    //registrar un historial
-                    break;
+                    return executeHistory();
 
                 default:
-                    executeDefaultCase();
-                    break;
+                    return "command not found";
             }
 
         }
 
-        private string executeDefaultCase() 
+        private string executeEcho(string[] parts) 
         {
-            return "command not found";
+            string[] arrAux = new string[parts.Length - 1];
+            
+            Array.Copy(parts, 1, arrAux, 0, arrAux.Length);
+
+            Debug.WriteLine(string.Join(" ", arrAux));
+
+            return string.Join(" ", arrAux);
         }
 
-        private string executePrint(string[] parts) 
+        private void executeCls() 
         {
-            return string.Join(" ", parts);
+
+        }
+
+        private string executeHistory()
+        {
+            Debug.WriteLine(string.Join("\n", historyList));
+
+            return string.Join("\n", historyList);
         }
 
     }
