@@ -13,6 +13,7 @@ namespace FileSystem_Simulator
     public partial class Terminal : Form
     {
         private string prompt = "usuario@ubuntu:-$ ";
+        private string directory = "/";
         public Terminal()
         {
             InitializeComponent();
@@ -35,12 +36,20 @@ namespace FileSystem_Simulator
             if (e.KeyCode == Keys.Enter)
             {
                 rtbTerminal.AppendText(Environment.NewLine + prompt);
-                e.SuppressKeyPress = true; 
-                return;
+                string command = rtbTerminal.Lines.Last().Substring(promptLength).Trim();
+                e.SuppressKeyPress = true;
+
+                commandManipulate(command);
+
             }
             if (e.KeyCode == Keys.Back)
             {
-                if (rtbTerminal.SelectionStart <= promptLength)
+                int currentPosition = rtbTerminal.SelectionStart;
+
+                int currentLineIndex = rtbTerminal.GetLineFromCharIndex(currentPosition);
+                int currentLineStart = rtbTerminal.GetFirstCharIndexFromLine(currentLineIndex);
+
+                if (currentPosition > currentLineStart && currentPosition <= (currentLineStart + prompt.Length))
                 {
                     e.SuppressKeyPress = true;
                     return;
@@ -62,6 +71,16 @@ namespace FileSystem_Simulator
         {
             rtbTerminal.SelectionStart = rtbTerminal.Text.Length;
             rtbTerminal.SelectionLength = 0;
+        }
+
+        private void commandManipulate(string command)
+        {
+            if (command.StartsWith("cd "))
+            {
+                string newDirectory = command.Substring(3);
+
+                rtbTerminal.AppendText(Environment.NewLine + "Nuevo directorio: " + newDirectory + Environment.NewLine + prompt);
+            }
         }
     }
 }
