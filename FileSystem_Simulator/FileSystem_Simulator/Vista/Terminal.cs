@@ -30,19 +30,26 @@ namespace FileSystem_Simulator
 
         private void rtbTerminal_KeyDown(object sender, KeyEventArgs e)
         {
+            int promptLength = prompt.Length;
+
             if (e.KeyCode == Keys.Enter)
             {
-                e.SuppressKeyPress = true;
-
-                if (rtbTerminal.SelectionStart < rtbTerminal.Text.LastIndexOf(Environment.NewLine))
+                rtbTerminal.AppendText(Environment.NewLine + prompt);
+                e.SuppressKeyPress = true; 
+                return;
+            }
+            if (e.KeyCode == Keys.Back)
+            {
+                if (rtbTerminal.SelectionStart <= promptLength)
                 {
-                    rtbTerminal.SelectionStart = rtbTerminal.Text.Length;
-                    rtbTerminal.SelectionLength = 0;
+                    e.SuppressKeyPress = true;
+                    return;
                 }
-                else
-                {
-                    rtbTerminal.AppendText(Environment.NewLine + prompt);
-                }
+            }
+            if (rtbTerminal.SelectionStart < rtbTerminal.Text.Length)
+            {
+                rtbTerminal.SelectionStart = rtbTerminal.Text.Length;
+                rtbTerminal.SelectionLength = 0;
             }
         }
 
