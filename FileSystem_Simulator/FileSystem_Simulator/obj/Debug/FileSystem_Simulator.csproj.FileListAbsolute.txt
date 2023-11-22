@@ -9,3 +9,13 @@ C:\Users\Elkin\OneDrive\Documentos\Proyectos\FileSystem_Simulator\FileSystem_Sim
 C:\Users\Elkin\OneDrive\Documentos\Proyectos\FileSystem_Simulator\FileSystem_Simulator\FileSystem_Simulator\obj\Debug\FileSystem_Simulator.csproj.CoreCompileInputs.cache
 C:\Users\Elkin\OneDrive\Documentos\Proyectos\FileSystem_Simulator\FileSystem_Simulator\FileSystem_Simulator\obj\Debug\FileSystem_Simulator.exe
 C:\Users\Elkin\OneDrive\Documentos\Proyectos\FileSystem_Simulator\FileSystem_Simulator\FileSystem_Simulator\obj\Debug\FileSystem_Simulator.pdb
+C:\Universidad\Sexto Semestre\LabIngSoftII\FileSystem_Simulator\FileSystem_Simulator\FileSystem_Simulator\bin\Debug\FileSystem_Simulator.exe.config
+C:\Universidad\Sexto Semestre\LabIngSoftII\FileSystem_Simulator\FileSystem_Simulator\FileSystem_Simulator\bin\Debug\FileSystem_Simulator.exe
+C:\Universidad\Sexto Semestre\LabIngSoftII\FileSystem_Simulator\FileSystem_Simulator\FileSystem_Simulator\bin\Debug\FileSystem_Simulator.pdb
+C:\Universidad\Sexto Semestre\LabIngSoftII\FileSystem_Simulator\FileSystem_Simulator\FileSystem_Simulator\obj\Debug\FileSystem_Simulator.csproj.AssemblyReference.cache
+C:\Universidad\Sexto Semestre\LabIngSoftII\FileSystem_Simulator\FileSystem_Simulator\FileSystem_Simulator\obj\Debug\FileSystem_Simulator.Terminal.resources
+C:\Universidad\Sexto Semestre\LabIngSoftII\FileSystem_Simulator\FileSystem_Simulator\FileSystem_Simulator\obj\Debug\FileSystem_Simulator.Properties.Resources.resources
+C:\Universidad\Sexto Semestre\LabIngSoftII\FileSystem_Simulator\FileSystem_Simulator\FileSystem_Simulator\obj\Debug\FileSystem_Simulator.csproj.GenerateResource.cache
+C:\Universidad\Sexto Semestre\LabIngSoftII\FileSystem_Simulator\FileSystem_Simulator\FileSystem_Simulator\obj\Debug\FileSystem_Simulator.csproj.CoreCompileInputs.cache
+C:\Universidad\Sexto Semestre\LabIngSoftII\FileSystem_Simulator\FileSystem_Simulator\FileSystem_Simulator\obj\Debug\FileSystem_Simulator.exe
+C:\Universidad\Sexto Semestre\LabIngSoftII\FileSystem_Simulator\FileSystem_Simulator\FileSystem_Simulator\obj\Debug\FileSystem_Simulator.pdb
