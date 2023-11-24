@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace FileSystem_Simulator.Controllador
 {
-    internal class SistemaArchivos
+    internal interface ICommand
     {
+        void execute(FileSystem fileSystem, string[] args);
     }
 }

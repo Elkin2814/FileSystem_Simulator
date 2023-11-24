@@ -1,26 +1,36 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
+﻿using FileSystem_Simulator.Controllador;
+using FileSystem_Simulator.Modelo;
+using System;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace FileSystem_Simulator
 {
     public partial class Terminal : Form
     {
-        private string prompt = "usuario@ubuntu:-$ ";
-        private string directory = "/";
-        public Terminal()
+        #region Attributes
+        private UserController userController;
+        private User user;
+        private CommandController command;
+        private string userPrompt; 
+        #endregion
+
+        #region Constructor
+        public Terminal(UserController userController)
         {
             InitializeComponent();
-            rtbTerminal.AppendText(prompt);
 
+            user = userController.Users.First();
+            command = new CommandController(user, userController, this);
+
+            userPrompt = $"{user.Name}@linux:-$ ";
+            rtbTerminal.AppendText(userPrompt);
+
+            this.userController = userController;
         }
+        #endregion
 
+        #region Methods
         private void rtbTerminal_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (rtbTerminal.GetLineFromCharIndex(rtbTerminal.SelectionStart) < rtbTerminal.Text.LastIndexOf(Environment.NewLine))
@@ -31,16 +41,18 @@ namespace FileSystem_Simulator
 
         private void rtbTerminal_KeyDown(object sender, KeyEventArgs e)
         {
-            int promptLength = prompt.Length;
+            int promptLength = userPrompt.Length;
 
             if (e.KeyCode == Keys.Enter)
             {
-                rtbTerminal.AppendText(Environment.NewLine + prompt);
-                string command = rtbTerminal.Lines.Last().Substring(promptLength).Trim();
+                execute(promptLength);
+
+                promptLength = rtbTerminal.Text.Length;
+
+                rtbTerminal.AppendText(Environment.NewLine + userPrompt);
                 e.SuppressKeyPress = true;
 
-                commandManipulate(command);
-
+                return;
             }
             if (e.KeyCode == Keys.Back)
             {
@@ -49,7 +61,7 @@ namespace FileSystem_Simulator
                 int currentLineIndex = rtbTerminal.GetLineFromCharIndex(currentPosition);
                 int currentLineStart = rtbTerminal.GetFirstCharIndexFromLine(currentLineIndex);
 
-                if (currentPosition > currentLineStart && currentPosition <= (currentLineStart + prompt.Length))
+                if (currentPosition > currentLineStart && currentPosition <= (currentLineStart + userPrompt.Length))
                 {
                     e.SuppressKeyPress = true;
                     return;
@@ -62,25 +74,30 @@ namespace FileSystem_Simulator
             }
         }
 
-        private void rtbTerminal_KeyUp(object sender, KeyEventArgs e)
-        {
-            
-        }
-
         private void rtbTerminal_SelectionChanged(object sender, EventArgs e)
         {
             rtbTerminal.SelectionStart = rtbTerminal.Text.Length;
             rtbTerminal.SelectionLength = 0;
         }
 
-        private void commandManipulate(string command)
+        private void execute(int promptLength)
         {
-            if (command.StartsWith("cd "))
-            {
-                string newDirectory = command.Substring(3);
+            string commandText = rtbTerminal.Lines.Last().Substring(promptLength);
 
-                rtbTerminal.AppendText(Environment.NewLine + "Nuevo directorio: " + newDirectory + Environment.NewLine + prompt);
-            }
+            string result = command.executeCommand(commandText);
+
+            rtbTerminal.AppendText("\n" + result);
+
+        } 
+        #endregion
+
+        #region GettersSetters
+        public string UserPrompt { get => userPrompt; set => userPrompt = value; }
+
+        public RichTextBox GetRichTextBox()
+        {
+            return rtbTerminal;
         }
+        #endregion
     }
 }
